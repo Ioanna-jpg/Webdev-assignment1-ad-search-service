@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: url('images/background.jpg') no-repeat center center;
+    background-size: cover; /* This property ensures the background covers the entire element */
+    font-family: "Times New Roman", Times, serif;
+    color: white;
+    height: 200vh; /* Make the body taller to demonstrate scrolling */
+    overflow: hidden; /* Hide the scrollbar */
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.menu-button {
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px; /* Set the width of your button */
+    height: 50px; /* Set the height of your button */
+    background: url('images/menu.png') no-repeat center center/cover;
+    border: none;
+    cursor: pointer;
+    
+}
+
+
+.menu-options {
+    display: none;
+    list-style: none;
+    padding: 0;
+    position: fixed;
+    top: 70px; /* Adjust this value to position the menu below the menu button */
+    right: 10px;
+    width: 300px; /* Set your desired width */
+    height: 33vh; /* 100% of the viewport height */
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    border-radius: 10px; /* Set your desired border-radius value for rounded corners */
+}
+
+
+
+.menu-options ul {
+    list-style-type: none; /* Removes bullets from the list items */
+    padding: 0; /* Optional: removes default padding */
+}
+
+.menu-options li {
+    padding: 10px;
+    text-align: center;
+}
+.menu-options li a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu-options li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+}
+
+.vertical-spacing {
+    margin-bottom: 40px; /* Adjust the value to control the spacing */
+}
+
+.contact-info {
+    text-align: center;
+    padding: 20px;
+}
+
+.contact-info a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
