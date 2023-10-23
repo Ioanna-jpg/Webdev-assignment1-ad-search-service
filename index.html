@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head id="head">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ArtQuest</title>
-    <link rel="stylesheet" href="styles.css">
+    
 </head>
 
 <body>
@@ -41,6 +41,15 @@
         <a href="https://www.instagram.com/">Instagram</a>
     
     </footer>
+
+    <script src="common.js"></script>
+    <script>
+        // Set common elements using JavaScript
+        document.getElementById("head").innerHTML = '<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ArtQuest</title><link rel="stylesheet" href="styles.css">';
+        document.getElementById("header").innerHTML = " <h1>ArtQuest</h1><p>What is art? </p><p>Quest for it here</p>";
+        document.getElementById("menu-button").innerHTML = '<nav class="menu-options" id="menu-options"><ul ><li><a href="#categories">Art Categories</a></li><li><a href="#about">About Us</a></li><li><a href="#contact">Contact</a></li></ul></nav>';
+    
+    </script>
     <script src="script.js"></script>
 </body>
 

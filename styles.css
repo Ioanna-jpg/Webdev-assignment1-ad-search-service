@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: url('images/background.jpg') no-repeat center center;
+    background: url('assets/background.jpg') no-repeat center center;
     background-size: cover; /* This property ensures the background covers the entire element */
     font-family: "Times New Roman", Times, serif;
     color: white;
@@ -36,7 +36,7 @@ footer {
     right: 10px;
     width: 50px; /* Set the width of your button */
     height: 50px; /* Set the height of your button */
-    background: url('images/menu.png') no-repeat center center/cover;
+    background: url('assets/menu.png') no-repeat center center/cover;
     border: none;
     cursor: pointer;
     
