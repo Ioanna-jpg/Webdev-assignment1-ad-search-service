@@ -1,32 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head id="head">
-    <!-- Επικεφαλίδα και αναφορές στα stylesheets, scripts κτλ -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArtQuest</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <head id="head">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ArtQuest</title>
+        
+    </head>
+    <style>
+        .person {
+            display: inline-block;
+            margin-right: 20px; /* Adjust the spacing between persons as needed */
+        }
+    
+        .person img {
+            width: 100px; /* Adjust the width of the person's image */
+            height: 100px; /* Adjust the height of the person's image */
+            object-fit: cover;
+            border-radius: 50%; /* To make the image circular */
+        }
+    </style>
+    
 <body>
     <header id="header">
-        <!-- Επικεφαλίδα σελίδας ποιοι είμαστε -->
-       
+        <h1>ArtQuest</h1>
+        <p>What is art? </p>
+        <p>Quest for it here</p>
     </header>
-    <nav>
-        <!-- Περιεχόμενο πλοήγησης -->
+
+    <button class="menu-button" id="menu-button"></button>
+    <nav class="menu-options" id="menu-options">
+        <ul >
+            <li><a href="categories.html">Art Categories</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        
     </nav>
     <main>
-        <!-- Περιεχόμενο σελίδας ποιοι είμαστε -->
+        <section id="about">
+            <h2>About Us</h2>
+            
+            <div class="person">
+                <div class="person-info">
+                    <h3>Ioanna Kyriakou</h3>
+                    <img src="person1.jpg" alt="Person 1">
+                    <p>CV description goes here.</p>
+                </div>
+            </div>
+    
+            <div class="person">
+                <div class="person-info">
+                    <h3>Odysseas Spyropoulos</h3>
+                    <img src="person2.jpg" alt="Person 2">
+                    <p>CV description goes here.</p>
+                </div>
+            </div>
+            
+            <!-- Add more person divs as needed -->
+    
+        </section>
+
+
     </main>
-    <footer id="footer">
-        <!-- Footer σελίδας ποιοι είμαστε -->
+    <footer class="contact-info" id="footer">
+        <a href="https://www.facebook.com/">Facebook</a>
+        <a href="https://twitter.com/">Twitter</a>
+        <a href="https://www.instagram.com/">Instagram</a>
+    
     </footer>
-    <script src="common.js"></script>
-    <script>
-        // Set common elements using JavaScript
-        document.getElementById("header").innerHTML = " <h1>ArtQuest</h1><p>What is art? </p><p>Quest for it here</p>";
-       
-    </script>
+
     <script src="script.js"></script>
 </body>
 </html>
