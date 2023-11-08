@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head id="head">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ArtQuest</title>
-    </head>
-<body>
+<head id="head">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtQuest</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
 
+<body>
     <header id="header">
-        <h1>ArtQuest</h1>
-        <p>What is art? </p>
+        <h1 class="logo"><a href="index.html">ArtQuest</a></h1>
+        <p>What is art?</p>
         <p>Quest for it here</p>
     </header>
 
@@ -18,47 +20,131 @@
         <ul >
             <li><a href="categories.html">Art Categories</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="report.html">Report Form</a></li>
         </ul>
-        
     </nav>
 
     <main>
         <h1>Art Categories</h1>
-        <section id="categories">
+        
+        <img class="icon" src="assets/musical-note.png" alt="Music Image">
 
+        <div class="category-details">
             <h2>Music</h2>
             <p>Explore art through <strong>music</strong>, where melodies paint emotions, and rhythm sculpts stories.</p>
-            <ul>
-                <li><a href="vinyls.html"><strong>Vinyls</strong></a></li>
-                <li><a><strong>Cassette tapes</strong></a></li>
-                <li><a><strong>CDs</strong></a></li>
-                <li><a><strong>Concert Posters and Flyers</strong></a></li>
-                 
-            </ul>
-            <img src="path_to_music_image.jpg" alt="Music Image">
-    
+        </div>
+        
+        <li class="sub-category">
+            <a href="vinyls.html">
+                <img class="sub-icon" src="assets/vinyl.png" alt="Vinyl">
+                <strong>Vinyls</strong>
+            </a>
+        </li>
+        <li class="sub-category">
+            <a href=#>
+                <img class="sub-icon" src="assets/compact-disc-with-glare.png" alt="CD">
+                <strong>CDs</strong>
+            </a>
+        </li>
+        <li class="sub-category">
+            <a href=#>
+                <img class="sub-icon" src="assets/cassete.png" alt="Casette">
+                <strong>Cassettes</strong>
+            </a>
+        </li>
+        <li class="sub-category">
+            <a href=#>
+                <img class="sub-icon" src="assets/poster.png" alt="Poster">
+                <strong>Concert Posters and Flyers</strong>              </a>
+        </li>
+
+        <img class="icon" src="assets/cinema.png" alt="Cinema Image">
+
+        <div class="category-details">
             <h2>Cinema</h2>
             <p>Explore art through <strong>cinema</strong>, where frames capture moments, and scripts unfold dreams.</p>
-            
-            <ul>
-                <li><a href="features.html"><strong>Feature Films</strong></a></li>
-                <li><a><strong>Short Films</strong></a></li>
-                <li><a><strong>Documentaries</strong></a></li>
-                
-            </ul>
-            <img src="path_to_films_image.jpg" alt="Films Image">
+        </div>
+        
+        <li class="sub-category">
+            <a href="features.html">
+                <img class="sub-icon" src="assets/feature_film.png" alt="Feature Films">
+                <strong>Feature Films</strong>
+            </a>
+        </li>
+        <li class="sub-category">
+            <a href=#>
+                <img class="sub-icon" src="assets/short_films.png" alt="Short Films">
+                <strong>Short Films</strong>
+            </a>
+        </li>
+        <li class="sub-category">
+            <a href=#>
+                <img class="sub-icon" src="assets/documentary.png" alt="Documentary">
+                <strong>Documentaries</strong>
+            </a>
+        </li>
 
+        <img class="icon" src="assets/photography.png" alt="Photography Image">
+
+        <div class="category-details">
             <h2>Photography</h2>
             <p>Explore art through <strong>photography</strong>, where snapshots freeze time and reveal unique perspectives.</p>
             <ul>
-                <li><a><strong>Color Photography</strong></a></li>
-                <li><a><strong>Black and White Photography</strong></a></li>
-                <li><a><strong>AI generated</strong></a></li>
-            
-            </ul>
-            
-            <img src="path_to_photography_image.jpg" alt="Photography Image">
+        </div>
+        
+        <li class="sub-category">
+            <a href="#">
+                <img class="sub-icon" src="assets/color.png" alt="Color Photography">
+                <strong>Color Photography</strong>
+            </a>
+        </li>
+        <li class="sub-category">
+            <a href=#>
+                <img class="sub-icon" src="assets/bnw.png" alt="B&W Photography">
+                <strong>Black and White Photography</strong>
+            </a>
+        </li>
+        <li class="sub-category">
+            <a href=#>
+                <img class="sub-icon" src="assets/ai.png" alt="AI Generated">
+                <strong>AI generated</strong>
+            </a>
+        </li>
+
+        <img class="icon" src="assets/painting.png" alt="Painting Image">
+
+        <div class="category-details">
+            <h2>Painting</h2>
+            <p>Explore art through <strong>paintings</strong>, where color and shapes blend to express emotions and ideas on canvas.</p>
+            <ul>
+        </div>
+        
+        <li class="sub-category">
+            <a href="#">
+                <img class="sub-icon" src="assets/oil.png" alt="Oil Paintings">
+                <strong>Oil Paintings</strong>
+            </a>
+        </li>
+        <li class="sub-category">
+            <a href=#>
+                <img class="sub-icon" src="assets/acrylic.png" alt="Acrylic Paintings">
+                <strong>Acrylic Paintings</strong>
+            </a>
+        </li>
+        <li class="sub-category">
+            <a href=#>
+                <img class="sub-icon" src="assets/digital.png" alt="Digital Paintings">
+                <strong>Digital Paintings</strong>
+            </a>
+        </li>
+
+
+
+
+<!--
+
+
+        <section id="category">
             <h2>Paintings</h2>
             <p>Explore art through <strong>paintings</strong>, where color and shapes blend to express emotions and ideas on canvas.</p>
             <ul>
@@ -66,11 +152,12 @@
                 <li><a><strong>Acrylic Paintings</strong></a></li>
                 <li><a><strong>Digital Paintings</strong></a></li>
 
-               
+            
             </ul>
             <img src="path_to_paintings_image.jpg" alt="Paintings Image">
 
         </section>
+    -->
     </main>
     
     <footer class="contact-info" id="footer">
@@ -80,5 +167,6 @@
         <a href="report.html">Problem Report Form</a>
     </footer>
     
+    <script src="script.js"></script>
 </body>
 </html>

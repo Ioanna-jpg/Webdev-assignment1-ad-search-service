@@ -1,33 +1,58 @@
+@font-face {
+    font-family: 'CoventryGardenNF';
+    src: url('fonts/CoventryGardenNF.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body {
     margin: 0;
     padding: 0;
-    background: url('assets/background.jpg') no-repeat center center;
-    background-size: cover; /* This property ensures the background covers the entire element */
-    font-family: "Times New Roman", Times, serif;
+    background-color: #7a89e4;
+    font-family: 'Poppins', sans serif;
     color: white;
-    height: 200vh; /* Make the body taller to demonstrate scrolling */
-    overflow: hidden; /* Hide the scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
 }
 
 header {
     background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
+    padding: 1px 0;
     text-align: center;
 }
 
 main {
     padding: 20px;
+    min-height: 60vh; /* Make the wrapper at least 100% of the viewport height */
 }
 
 footer {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    padding: 20px;
 }
+
+p {
+    margin: 5px 0; /* Adjust the top and bottom margin as needed */
+}
+
+
+.logo {
+    font-family: 'CoventryGardenNF';
+    font-size: 50px;
+}
+
+.logo a {
+    text-decoration: none; /* Remove the default underline */
+    color: inherit; /* Inherit the color from the parent element */
+}
+.logo a:hover {
+    color: #7a89e4; /* Change the color on hover to purple or your desired color */
+    font-size: 49px;
+}
+
 
 .menu-button {
 
@@ -35,8 +60,9 @@ footer {
     top: 10px;
     right: 10px;
     width: 50px; /* Set the width of your button */
-    height: 50px; /* Set the height of your button */
-    background: url('assets/menu.png') no-repeat center center/cover;
+    height: 100px; /* Set the height of your button */
+    background: url('assets/background.jpg') no-repeat center center/cover;
+    background-size: 100%;
     border: none;
     cursor: pointer;
     
@@ -50,8 +76,8 @@ footer {
     position: fixed;
     top: 70px; /* Adjust this value to position the menu below the menu button */
     right: 10px;
-    width: 300px; /* Set your desired width */
-    height: 33vh; /* 100% of the viewport height */
+    width: 200px; 
+    height: 160px;
     background-color: rgba(0, 0, 0, 0.8);
     box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
     z-index: 1;
@@ -92,4 +118,78 @@ footer {
     color: white;
     text-decoration: none;
     margin: 0 10px;
+}
+
+/* CATEGORIES */
+
+/* Style for the icon */
+.icon {
+    max-width: 100px;
+    height: auto;
+    float: left; /* Float the icon to the left */
+    margin-top: 30px;
+    margin-right: 50px; /* Add spacing between the icon and category details */
+    margin-bottom: 140px;
+    text-align: center;
+}
+
+.category-details {
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* Style for the sub-categories list */
+.sub-category {
+    text-align: center;
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0; /* Remove default margin */
+}
+
+/* Style for the subcategory links */
+.sub-category a {
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit the text color from the parent */
+}
+
+.sub-category a:hover {
+    font-size: larger;
+}
+
+/* Style for the icons using the "sub-icon" class */
+.sub-icon {
+    max-width: 40px;
+    height: auto;
+    margin-right: 10px; /* Add spacing between the icon and text */
+}
+
+.person-info {
+    list-style: none;
+    float: left;
+}
+
+.profile-photo {
+    max-width: 250px;
+    border-radius: 50%;
+    margin-right: 50px;
+}
+
+
+.product-photo {
+    max-width: 200px;
+}
+
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+  
+/* Clear floats after image containers */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
 }
