@@ -7,35 +7,50 @@
 
 
 body {
+    display: grid;
+    grid-template-areas:
+        "topbar"
+        "content"
+        "footer";
+    grid-auto-rows: minmax(50px, auto);
+
     margin: 0;
     padding: 0;
     background-color: #7a89e4;
     font-family: 'Poppins', sans serif;
-    color: white;
+    color: black;
     scrollbar-width: thin;
     scrollbar-color: transparent transparent;
+    min-height: 100vh;
 }
 
 header {
+    grid-area: topbar;
+
     background-color: rgba(0, 0, 0, 0.5);
     padding: 1px 0;
     text-align: center;
 }
 
 main {
+    grid-area: content;
+
     padding: 20px;
-    min-height: 60vh; /* Make the wrapper at least 100% of the viewport height */
 }
 
 footer {
+    grid-area: footer;
+
     background-color: rgba(0, 0, 0, 0.5);
-    color: white;
     text-align: center;
     padding: 20px;
+
+    position: static;
+    bottom: 0; /* Stick the footer to the bottom */
 }
 
 p {
-    margin: 5px 0; /* Adjust the top and bottom margin as needed */
+    margin: 5px 0
 }
 
 
@@ -78,35 +93,35 @@ p {
     right: 10px;
     width: 200px; 
     height: 160px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #7a89e4;
     box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
     z-index: 1;
     border-radius: 10px; /* Set your desired border-radius value for rounded corners */
 }
 
 
-
 .menu-options ul {
     list-style-type: none; /* Removes bullets from the list items */
-    padding: 0; /* Optional: removes default padding */
+    padding: 0;
 }
 
 .menu-options li {
     padding: 10px;
     text-align: center;
 }
+
 .menu-options li a {
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
 .menu-options li:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: white;
     cursor: pointer;
 }
 
 .vertical-spacing {
-    margin-bottom: 40px; /* Adjust the value to control the spacing */
+    margin-bottom: 40px;
 }
 
 .contact-info {
@@ -115,32 +130,56 @@ p {
 }
 
 .contact-info a {
-    color: white;
+    color: black;
     text-decoration: none;
     margin: 0 10px;
 }
 
 /* CATEGORIES */
 
+/* Style for the category container using CSS Grid */
+#category {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Two columns: auto for icon, 1fr for the rest */
+    grid-column-gap: 70px; /* Add some gap between columns */
+    align-items: start; /* Align items vertically at the start */
+    margin-bottom: 40px; /* Add margin at the bottom for spacing */
+}
+
 /* Style for the icon */
 .icon {
     max-width: 100px;
     height: auto;
-    float: left; /* Float the icon to the left */
-    margin-top: 30px;
-    margin-right: 50px; /* Add spacing between the icon and category details */
-    margin-bottom: 140px;
-    text-align: center;
 }
 
+.category-title{
+    margin: 0;
+}
+
+.top{
+    margin-bottom: 20px;
+}
+
+/* Style for the right column (category details) */
 .category-details {
-    margin-top: 50px;
-    text-align: center;
+    margin: 0;
+    text-align: left; /* Align text to the left */
+}
+
+.category-details a{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Style for the icons using the "sub-icon" class */
+.sub-icon {
+    max-width: 40px;
+    height: auto;
+    margin-right: 10px; /* Add spacing between the icon and text */
 }
 
 /* Style for the sub-categories list */
 .sub-category {
-    text-align: center;
     list-style: none; /* Remove bullet points */
     padding: 0;
     margin: 0; /* Remove default margin */
@@ -150,18 +189,19 @@ p {
 .sub-category a {
     text-decoration: none; /* Remove underline from links */
     color: inherit; /* Inherit the text color from the parent */
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Align items vertically at the center */
+    margin: 10px 0; /* Adjust spacing between subcategories */
+    transition: transform 0.3s; /* Add a smooth transition effect */
 }
 
+/* Hover effect for the subcategory links */
 .sub-category a:hover {
-    font-size: larger;
+    transform: scale(1.09); /* Enlarge the link on hover */
 }
 
-/* Style for the icons using the "sub-icon" class */
-.sub-icon {
-    max-width: 40px;
-    height: auto;
-    margin-right: 10px; /* Add spacing between the icon and text */
-}
+
+/* ABOUT US */
 
 .person-info {
     list-style: none;
@@ -193,3 +233,32 @@ p {
     clear: both;
     display: table;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    grid-template-rows: auto auto; /* Two rows with automatic height */
+    gap: 20px; /* Gap between grid items */
+}
+
+.product-photos {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.product-photo {
+    max-width: 50%;
+}
+
+.large {
+    max-height: 300px; /* Adjust the height as needed */
+}
+
+.product-details {
+    grid-row: 1;
+    grid-column: 2;
+}
+
+
+
+/* Add additional styling as needed */
