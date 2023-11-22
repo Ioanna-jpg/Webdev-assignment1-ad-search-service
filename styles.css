@@ -6,6 +6,51 @@
 }
 
 
+/* Media Queries for Responsive Design */
+@media only screen and (max-width: 600px) {
+    /* Mobile Devices: Single Column Layout */
+    body {
+        grid-template-areas:
+            "topbar"
+            "content"
+            "footer";
+    }
+    /* Additional mobile specific styles */
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    /* Tablet Devices: Two Column Layout */
+    body {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "topbar topbar"
+            "content content"
+            "footer footer";
+    }
+    /* Additional tablet specific styles */
+}
+
+@media only screen and (min-width: 1025px) {
+    /* Desktop Devices: Three Column Layout */
+    body {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "topbar topbar topbar"
+            "content content content"
+            "footer footer footer";
+    }
+    /* Additional desktop specific styles */
+}
+
+/* Responsive Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+
 body {
     display: grid;
     grid-template-areas:
