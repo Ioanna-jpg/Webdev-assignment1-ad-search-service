@@ -10,24 +10,114 @@
 
 <body>
     <header id="header">
-        <h1 class="logo">ArtQuest</h1>
-        <p>What is art?</p>
-        <p>Quest for it here</p>
+        <h1 class="logo"><a href="index.html">ArtQuest</a></h1>
+        <nav class="menu-options" id="menu-options">
+            <ul >
+                <li><a href="categories.html">Art Categories</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="report.html">Contact</a></li>
+                <li><a href="registration.html"> Sign Up</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <button class="menu-button" id="menu-button"></button>
-    <nav class="menu-options" id="menu-options">
-        <ul >
-            <li><a href="categories.html">Art Categories</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="report.html">Report Form</a></li>
-        </ul>
-    </nav>
+    
     
     <!-- HTML content with vertical spacing -->
     <main >
-        <h2> Quest for art products that are relevant to music, cinema, photography, paintings and sculptures</h2>
 
+        <div class="grid-container">
+            <div class="slogan-container">
+                <div class="slogan">
+                    <h1>What is art?</h1>
+                    <h1>Quest for it here</h1>
+                </div>
+                <img src="assets/background.jpg" alt="background" class="background">
+            </div>
+            <h2 class="paragraph">Discover art products that are relevant to music, cinema, photography, and paintings</h2>
+            
+            <!-- Music Section -->
+            <div class="section">
+                <h2 class="paragraph">Music</h2>
+                <div class="content">
+                    <img src="assets/vinyls.jpg" 
+                    srcset="assets/vinyls-small.jpg 300w, assets/vinyls.jpg 480w"
+                    sizes="(max-width: 600px) 300px, 480px"
+                    alt="vinyls" class = "artwork">
+                    <div class="quote-container">
+                        <p class="quote">"Where words fail, music speaks"
+                            <br> - Hans Christian Andersen</p>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="quote-container">
+                        <p class="quote">"Music gives a soul to the universe, wings to the mind, flight to the imagination, and life to everything"
+                            <br> -
+                            Plato</p>
+                    </div>
+                    <img src="assets/nina.jpg" alt="nina" class="artwork">
+                 
+                </div>
+            </div>
+               
+            <!-- Cinema Section -->
+            <div class="section">
+                <h2 class="paragraph">Cinema</h2>
+                <div class="content">    
+                    <img src="assets/dragontatjpg.jpg" alt="girl" class="artwork">
+                    <div class="quote-container">
+                        <p class="quote">"Cinema is a matter of what's in the frame and what's out"
+                            <br> -
+                            Martin Scorsese</p>  
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="quote-container">
+                        <p class="quote">"Cinema should make you forget you are sitting in a theater"
+                            <br> -
+                            Roman Polanski</p>  
+                    </div>
+                    <img src="assets/lit.jpg" alt="lit" class="artwork">
+                 
+                </div>
+            </div>
+
+            <!-- Photography Section -->
+            <div class="section">
+                <h2 class="paragraph">Photography</h2>
+                <div class="content">
+                    <img src="assets/tokyoneonstreet.jpg" alt="tokyoneonstreet" class="artwork">
+                    <div class="quote-container">
+                        <p class="quote">"Photography is the story I fail to put into words"
+                            <br> -
+                            Destin Sparks</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paintings Section -->
+            <div class="section">
+                <h2 class="paragraph">Paintings</h2>
+                <div class="content">
+                    <img src="assets/matisse.jpg" alt="matisse" class="artwork">
+                    <div class="quote-container">
+                        <p class="quote">"I never paint dreams or nightmares. I paint my own reality"
+                        <br> -
+                        Frida Kahlo</p>
+                    
+                    </div>
+                </div>
+                <div class="content">
+                    <img src="assets/monet.jpg" alt="monet" class="artwork">
+                    <div class="quote-container">
+                        <p class="quote">"I would like to paint the way a bird sings"
+                            <br> -
+                            Claude Monet</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
     </main>
 
     <footer class="contact-info" id="footer">

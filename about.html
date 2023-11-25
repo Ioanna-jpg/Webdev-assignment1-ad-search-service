@@ -11,37 +11,50 @@
 <body>
     <header id="header">
         <h1 class="logo"><a href="index.html">ArtQuest</a></h1>
-        <p>What is art?</p>
-        <p>Quest for it here</p>
+        <p >What is art?</p>
+        <p >Quest for it here</p>
+
+        <nav class="menu-options" id="menu-options">
+            <ul >
+                <li><a href="categories.html">Art Categories</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="report.html">Contact</a></li>
+                <li><a href="registration.html"> Sign Up</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <button class="menu-button" id="menu-button"></button>
-    <nav class="menu-options" id="menu-options">
-        <ul >
-            <li><a href="categories.html">Art Categories</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="report.html">Report Form</a></li>
-        </ul>
-        
-    </nav>
     <main>
         <h2>About Us</h2>
         <p>Our team consists of people who want to make art widely available to a great audience </p>
-
-        <li class="person-info">
-            <h3>Ioanna Kyriakou</h3>
-            <img class='profile-photo' src="assets/ioanna.jpg" alt="Ioanna Kyriakou">
-            <p>registration number: 3</p>
-            <p>Συντομο βιογραφικό</p>
-        </li>
-        <li class="person-info">
-            <h3>Odysseas Spyropoulos</h3>
-            <img class='profile-photo' src="assets/odysseas.jpg" alt="Odysseas Spyropoulos">
-            <p>registration number: 3200183</p>
-            <p>Συντομο βιογραφικό</p>
-        </li>
-
+        <div class="person-info-container">
+            <div class="person-info">
+                <img class='profile-photo' src="assets/ioanna.jpg" alt="Ioanna Kyriakou">
+                <div class="person-description">
+                    <h3>Ioanna Kyriakou</h3>
+                    <p>She is an Informatics student at the Athens University of 
+                        Economics and Business with a strong interest in software and 
+                        web development. During her free time, she immerses herself in 
+                        music and painting.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="person-info">
+                <img class='profile-photo' src="assets/odysseas.jpg" alt="Odysseas Spyropoulos">
+                <div class="person-description">
+                    <h3>Odysseas Spyropoulos</h3>
+                    <p>A student majoring in Informatics at Athens University of Economics and Business, 
+                        who has a keen interest in software and web development. Outside of academics, 
+                        he dedicates his leisure time to exploring cinema and engaging in film production activities.
+                    </p>
+                </div>
+            </div>
+        </div>
+      
     </main>
+    
+  
     
     <footer class="contact-info" id="footer">
         <a href="https://www.facebook.com/">Facebook</a>

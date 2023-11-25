@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="header">
+        <h1 class="logo"><a href="index.html">ArtQuest</a></h1>
+        <p>What is art?</p>
+        <p>Quest for it here</p>
+
+        <nav class="menu-options" id="menu-options">
+            <ul >
+                <li><a href="categories.html">Art Categories</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="report.html">Contact</a></li>
+                <li><a href="registration.html"> Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class = "form-container">
+        <h2><center>Sign Up</center></h2>
+    <form id='signup-form'>
+        <br
+        <!-- Personal Details Section -->
+        <fieldset>
+            <legend>Personal Details</legend>
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" autocomplete="name" required>
+        
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+        
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="birthday" name="dob" autocomplete="bday" required>
+        
+            <label for="phone">Phone:</label>
+            <input type="tel" id="telephone" name="phone" autocomplete="tel" required>
+        
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" autocomplete="street-address" required>
+        
+            <label for="postal">Postal Code:</label>
+            <input type="text" id="postcode" name="postal" autocomplete="postal-code" required>
+        </fieldset>
+        
+
+        <!-- User Identification Section -->
+        
+        <fieldset>
+            <legend>User Identification</legend>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" pattern=".{5,}" title="Username must be at least 5 characters long" required>
+        
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm_password" required>               
+        </fieldset>
+    
+        <!-- Communication Method Section -->
+        <fieldset>
+            <legend>Communication Method</legend>
+            <select name="communication" id="communication">
+                <option value="sms">SMS</option>
+                <option value="email">Email</option>
+                <option value="viber">Viber</option>
+                <option value="whatsapp">Whatsapp</option>
+            </select>
+        </fieldset>
+
+        <!-- Questionaire Section -->
+        <fieldset>
+            <h3>Questionaire</h3>
+            <details>
+                <summary>What kind of art are you interested in?</summary>
+                <label for="art-genre">Choose your favorite art genre from the list:</label>
+                <input list="art-genres" name="art-genre" id="art-genre">
+
+                <datalist id="art-genres">
+                    <option value="Music">
+                    <option value="Cinema">
+                    <option value="Photography">
+                    <option value="Painting">
+                    <option value="Sculpture">
+                    <option value="Literature">
+                    <option value="Dance">
+                    <option value="Theatre">
+                    <!-- Add more genres as needed -->
+                </datalist>
+
+            </details>
+            <details>
+                <summary>What kind of music are you interested in?</summary>
+                <label for="music-genre">Choose your favorite music genre from the list:</label>
+                <input list="music-genres" name="music-genre" id="music-genre">
+
+                <datalist id="music-genres">
+                    <option value="Rock">
+                    <option value="Pop">
+                    <option value="Jazz">
+                    <option value="Classical">
+                    <option value="Hip-Hop">
+                    <option value="Blues">
+                    <option value="Electronic">
+                    <option value="Country">
+                    <option value="Reggae">
+                </datalist>
+
+            </details>
+            
+         
+            <details>
+                <summary>What kind of movies are you interested in?</summary>
+                <label for="movie-genre">Choose your favorite movie genre from the list:</label>
+                <input list="movie-genres" name="movie-genre" id="movie-genre">
+
+                <datalist id="movie-genres">
+                    <option value="Action">
+                    <option value="Comedy">
+                    <option value="Drama">
+                    <option value="Horror">
+                    <option value="Romance">
+                    <option value="Sci-Fi">
+                    <option value="Documentary">
+                    <option value="Thriller">
+                    <option value="Fantasy">
+                </datalist>
+            </details>
+            
+            <details>
+                <summary>What kind of photography are you interested in?</summary>
+                <label for="photo-genre">Choose your favorite photography genre from the list:</label>
+                <input list="photo-genres" name="photo-genre" id="photo-genre">
+
+                <datalist id="photo-genres">
+                    <option value="Portrait">
+                    <option value="Landscape">
+                    <option value="Wildlife">
+                    <option value="Street">
+                    <option value="Sports">
+                    <option value="Architectural">
+                    <option value="Fashion">
+                    <option value="Macro">
+                </datalist>
+
+            </details>
+            
+            <details>
+                <summary>What kind of artistic styles are you interested in?</summary>
+                <label for="artistic-style">Choose your favorite artistic style from the list:</label>
+                <input list="artistic-styles" name="artistic-style" id="artistic-style">
+
+                <datalist id="artistic-styles">
+                    <option value="Abstract">
+                    <option value="Realism">
+                    <option value="Impressionism">
+                    <option value="Expressionism">
+                    <option value="Cubism">
+                    <option value="Surrealism">
+                    <option value="Minimalism">
+                    <option value="Pop Art">
+                </datalist>
+
+            </details>
+            
+        </fieldset>
+              
+
+        <button type="submit">Register</button>
+        
+    </form>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

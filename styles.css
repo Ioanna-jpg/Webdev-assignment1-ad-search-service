@@ -1,46 +1,12 @@
 @font-face {
     font-family: 'CoventryGardenNF';
-    src: url('fonts/CoventryGardenNF.otf') format('opentype');
+    src: url('fonts/CoventryGardenNF.otf') format('otf');
     font-weight: normal;
     font-style: normal;
 }
 
 
-/* Media Queries for Responsive Design */
-@media only screen and (max-width: 600px) {
-    /* Mobile Devices: Single Column Layout */
-    body {
-        grid-template-areas:
-            "topbar"
-            "content"
-            "footer";
-    }
-    /* Additional mobile specific styles */
-}
 
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
-    /* Tablet Devices: Two Column Layout */
-    body {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas:
-            "topbar topbar"
-            "content content"
-            "footer footer";
-    }
-    /* Additional tablet specific styles */
-}
-
-@media only screen and (min-width: 1025px) {
-    /* Desktop Devices: Three Column Layout */
-    body {
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas:
-            "topbar topbar topbar"
-            "content content content"
-            "footer footer footer";
-    }
-    /* Additional desktop specific styles */
-}
 
 /* Responsive Images */
 img {
@@ -49,7 +15,9 @@ img {
 }
 
 
-
+html {
+    height: 100%; /* This makes the html element cover at least the full height of the viewport */
+}
 
 body {
     display: grid;
@@ -57,53 +25,86 @@ body {
         "topbar"
         "content"
         "footer";
-    grid-auto-rows: minmax(50px, auto);
-
+    grid-template-rows: auto 1fr auto; /* Auto for header and footer, 1fr for main content */
+    grid-template-columns: 1fr; /* Single column layout */
+    
     margin: 0;
     padding: 0;
     background-color: #7a89e4;
-    font-family: 'Poppins', sans serif;
+    font-family: 'Poppins', sans-serif;
     color: black;
     scrollbar-width: thin;
     scrollbar-color: transparent transparent;
+    min-height: 100vh; /* Ensure the body is at least as tall as the viewport */
 }
+
 
 header {
     grid-area: topbar;
-
     color: #d0d6ff;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 1px 0;
     text-align: center;
+    position: sticky; /* Stick the header to the top of the viewport */
+    /* Add shadow */
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    /* round the corners */
+    border-radius: 0px 0px 10px 10px;
 }
 
 main {
+    min-height: 100vh; /* This will ensure that 'main' covers the full viewport height */
+    padding: 20px;
     grid-area: content;
     
-    min-height: 77vh;
-    padding: 20px;
+    
 }
 
 footer {
     grid-area: footer;
-
+    margin-top: 30vh;
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
     text-align: center;
     padding: 20px;
 
-    position: static;
+    /* Add shadow */
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    /* round the corners */
+    border-radius: 10px 10px 0px 0px;
+    position: relative;
     bottom: 0; /* Stick the footer to the bottom */
 }
 
+footer a{
+    /* add shadow */
+    text-shadow: 2px 2px 2px #000000;
+
+}
+
 p {
-    margin: 5px 0
+    margin: 5px 0;
+    
+}
+
+header p{
+    /* add shadow */
+    text-shadow: 2px 2px 2px #000000;
 }
 
 
 .logo {
     font-family: 'CoventryGardenNF';
-    font-size: 50px;
+    /* Increase the size of the logo relative to the viewport width */
+    font-size: 6vw; /* Adjust as needed, 5vw is just an example */
+
+    /* Space below the logo, relative to the viewport height */
+    margin-top: 8vh; /* Adjust as needed */
+    margin-bottom: 3vh; /* Adjust as needed */;
+    
+    /* add shadow */
+    text-shadow: 2px 2px 2px #000000;
+    
 }
 
 .logo a {
@@ -112,60 +113,67 @@ p {
 }
 .logo a:hover {
     color: #7a89e4; /* Change the color on hover to purple or your desired color */
-    font-size: 49px;
+    font-size: 60px;
 }
 
-
-.menu-button {
-
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 50px; /* Set the width of your button */
-    height: 100px; /* Set the height of your button */
-    background: url('assets/background.jpg') no-repeat center center/cover;
-    background-size: 100%;
-    border: none;
-    cursor: pointer;
-    
-}
 
 
 .menu-options {
-    display: none;
-    list-style: none;
-    padding: 0;
-    position: fixed;
-    top: 70px; /* Adjust this value to position the menu below the menu button */
-    right: 10px;
-    width: 200px; 
-    height: 160px;
-    background-color: #7a89e4;
-    box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
-    z-index: 1;
-    border-radius: 10px; /* Set your desired border-radius value for rounded corners */
+    /* Use flexbox for centering */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 10vh; /* Take full height of the viewport */
 }
-
 
 .menu-options ul {
-    list-style-type: none; /* Removes bullets from the list items */
+    /* Removes default list styling */
+    list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex; /* Keeps the list horizontal */
 }
 
-.menu-options li {
-    padding: 10px;
-    text-align: center;
+.menu-options ul li {
+    /* Styles for individual menu items */
+    margin-right: 30px; /* Space between menu items */
+    /* Last item should not have a right margin */
+    margin-left: 30px; /* Space between menu items */
 }
 
-.menu-options li a {
-    color: black;
+.menu-options ul li:first-child {
+    margin-left: 0; /* First item should not have a left margin */
+}
+
+.menu-options ul li:last-child {
+    margin-right: 0; /* Last item should not have a right margin */
+}
+
+.menu-options ul li a {
+    /* Existing styles for the links */
     text-decoration: none;
+    color: #d0d6ff; /* Your existing color */
+    /* add shadow */
+    text-shadow: 2px 2px 2px #000000;
 }
 
-.menu-options li:hover {
-    background-color: white;
-    cursor: pointer;
+.menu-options ul li a:hover {
+    /* Scale up the size of the menu item on hover */
+    font-size: 1.1em;
+
+    /* Change the color on hover to purple or your desired color */
+    color: #7a89e4;
+
+    /* Add a smooth transition effect */
+    transition: color 0.2s, transform 0.2s;
+
+    /* Use transform to scale the text without affecting layout */
+    transform: scale(1.1);
 }
+
+
+
+
 
 .vertical-spacing {
     margin-bottom: 40px;
@@ -184,19 +192,16 @@ p {
 
 /* CATEGORIES */
 
-/* Style for the category container using CSS Grid */
+
+
 #categories {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-
-    padding: 40px 100px;
-    margin-top: 40px;
-    list-style: none;
+    grid-template-columns: repeat(3, minmax(100px, 1fr)); /* Three columns by default */
+    gap: 20px; /* Adjust the gap size as needed */
 }
 
 
 #category {
-    padding: 15px;
     list-style-type: none;
     background-color: #d0d6ff;
     border-radius:3%;
@@ -205,8 +210,16 @@ p {
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
     text-align: center;
     min-width: 300px;
-    margin: 0px 50px 90px;
+    margin-bottom: 3vh; /* Adjust this value as needed */
 }
+
+
+#categories-title{
+    grid-column: 1 / -1; /* Span the title across all columns */
+    text-align: center;
+    
+}
+
 
 /* Style for the icon */
 .icon {
@@ -276,6 +289,7 @@ p {
 }
 
 /* PRODUCTS */
+
 .directory a{
     text-decoration: none;
     color: inherit;
@@ -286,12 +300,19 @@ p {
 
 .product {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns */
+    grid-template-columns: repeat(2, 1fr); /* Three columns by default */
     grid-template-rows: auto auto auto; /* Three rows with automatic height */
-    gap: 10px; /* Gap between grid items */
+    gap: 40px; /* Gap between grid items */
 }
 
+#product{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Three columns by default */
+   
+
+}
 .photos {
+    width: 100%; /* Set the width of the grid item to 100% */
     grid-area: 1 / 1 / 3 / 2;
     list-style-type: none;
     background-color: #d0d6ff;
@@ -301,6 +322,7 @@ p {
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
     text-align: center;
     min-width: 300px;
+    padding: 10px;
 }
 
 .large {
@@ -359,28 +381,27 @@ p {
 
 /* ABOUT US */
 
+.person-info-container {
+    display: flex; /* Use flexbox to lay out child elements inline */
+    flex-wrap: wrap; /* Allows items to wrap onto the next line if needed */
+    justify-content: space-around; /* Spreads out the items evenly */
+    gap: 20px; /* Optional: Adds space between the items */
+    margin-top: 5vw;
+}
+
 .person-info {
-    list-style: none;
-    float: left;
+    display: flex; /* Align image and description side by side */
+    align-items: center; /* Center items vertically */
 }
 
 .profile-photo {
-    max-width: 250px;
+    max-width: 150px; /* Adjust as necessary */
     border-radius: 50%;
-    margin-right: 50px;
+    margin-right: 20px;
 }
 
-
-.product-photo {
-    max-width: 200px;
-}
-
-
-.column {
-    float: left;
-    width: 33.33%;
-    padding: 5px;
-    box-sizing: border-box;
+.person-description {
+    max-width: calc(100% - 400px); /* Adjust width minus the image width and margin */
 }
   
 /* Clear floats after image containers */
@@ -389,3 +410,297 @@ p {
     clear: both;
     display: table;
 }
+
+
+/*registration */
+
+
+.form-container {
+    max-width: 50%; /* Or the width you prefer */
+    padding: 5vw; /* Responsive padding */
+    margin: 5vw auto; /* Centers the box */
+    background-color: #f3f3f3; /* Light grey background */
+    border-radius: 1em; /* Responsive based on font size */
+    box-shadow: 0 0.2vw 0.5vw rgba(0,0,0,0.2); /* Shadow size based on viewport width */
+    border: 0.1vw solid #ddd; /* Border thickness based on viewport width */
+}
+
+
+input, select, textarea, button {
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 4px 0;
+    padding: 8px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14% 20%;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+form {
+    max-width: 100%; /* Adjust as needed */
+    margin: auto;
+}
+
+fieldset {
+    border: none; /* Removes the border around fieldsets */
+    margin: 10px 0; /* Adds some spacing between each section */
+}
+
+input, select, textarea { /* Now includes textarea */
+    width: 100%; /* Makes textarea take full width of its container */
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box; /* Includes padding and border in the width */
+}
+
+label {
+    display: block; /* Makes label take the full width and allows the input to be on a new line */
+    margin-top: 20px; /* Adds space between the label and any elements above */
+}
+
+/* Adjust the button styling as desired */
+button[type="submit"] {
+    width: auto;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #7a89e4; /* Example button color */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: rgb(91, 72, 177); /* Darker shade on hover */
+}
+
+/* Styling for the <details> and <summary> tags */
+details {
+    margin-bottom: 15px;
+}
+
+summary {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
+
+/* Media query for tablets: 2 columns */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    #categories {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+    }
+}
+
+/* Media query for mobile devices: 1 column */
+@media screen and (max-width: 600px) {
+    #categories {
+        grid-template-columns: 1fr; /* Single column for mobile */
+    }
+}
+
+
+/* Media query for tablets and mobile devices: 1 column */
+@media screen and (max-width: 1024px) {
+    
+    .product {
+        grid-template-columns: 1fr; /* Single column layout */
+        grid-template-rows: auto auto auto; /* Adjust as needed */
+    }
+
+    .photos {
+        grid-area: 1 / 1 / 2 / 2; /* Position in the first row */
+    }
+
+    .product-details {
+        grid-area: 2 / 1 / 3 / 2; /* Position in the second row */
+    }
+
+    .additional-info {
+        grid-area: 3 / 1 / 4 / 2; /* Position in the third row */
+    }
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section h2{
+    margin-bottom: 5vw;
+    /* underline */
+    text-decoration: underline;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /* Adjusted for reduced space */
+    width: 100%;
+}
+
+.artwork, .quote-container {
+    width: 35%; /* Adjust width if necessary */
+    margin: 0px; /* Reduced margin */
+}
+
+/* Alternate positioning of artwork and quote */
+.content:nth-of-type(odd) .artwork {
+    order: 1;
+}
+
+.content:nth-of-type(odd) .quote-container {
+    order: 2;
+}
+
+.content:nth-of-type(even) .artwork {
+    order: 2;
+}
+
+.content:nth-of-type(even) .quote-container {
+    order: 1;
+}
+
+.quote-container {
+ 
+  
+    background-image: url('assets/cloud.jpg');
+    background-size: 100% 100%;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 100px; /* Adjust or remove as needed */
+    position: relative;
+    clip-path: ellipse(50% 50% at 50% 50%);
+  
+    
+    /* This creates an ellipse that is 100% the width and height of the element, centered */
+    
+    padding: 3em;
+    text-align: center;
+    max-width: 230px;
+    max-height: 500px;
+
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+}
+
+
+
+.quote {
+    font-family: 'Conderon';
+    src: url('fonts/conderon.otf') format('otf');
+
+    font-weight: bold; /* Ensures the text is bold */
+    font-style: normal;
+    /* add shadow */
+    text-shadow: 1px 1px 1px #3d4472;
+
+    display: grid;
+    font-size: 3.0vw; /* Increased font size to make the text appear bolder */
+    margin-top: 7vh; /* Adjust as needed */
+    margin-bottom: 3vh; /* Adjust as needed */
+
+    /* align the quote to the center of the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3d4472; 
+}
+
+
+
+
+.slogan-container {
+    position: relative; /* Parent container must be relative */
+}
+
+.background {
+    width: 80%; /* Ensure the image covers the container */
+    height: auto;
+    /* align to the center */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.slogan {
+    position: absolute; /* Position slogan absolutely to overlay on the image */
+    top: 30%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust the positioning to the center */
+
+    /* Rest of your styles */
+    font-family: 'Conderon';
+    src: url('fonts/conderon.otf') format('otf');
+    font-weight: bold;
+    font-size: 2.5vw;
+    color: #d0d6ff;
+    text-align: center;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #3d4472;
+    /* add shadow */
+    text-shadow: 2px 2px 2px #3d4472;
+}
+
+
+.paragraph{
+    font-family: 'Conderon';
+    src: url('fonts/conderon.otf') format('otf');
+
+    font-weight: bold; /* Ensures the text is bold */
+    font-style: normal;
+
+    display: grid;
+    gap: 10px;
+    font-size: 4vw; /* Increased font size to make the text appear bolder */
+    margin-top: 12vh; /* Adjust as needed */
+    margin-bottom: 3vh; /* Adjust as needed */
+    /*add shadow */
+    text-shadow: 2px 2px 2px #3d4472;
+    text-align: center;
+  
+    color: #3d4472; 
+}
+
+
+.artwork {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    /* Add any specific styles you want for the image here */
+    max-width: 30%;
+    height: auto;
+}
+
+
+
