@@ -1,12 +1,9 @@
 @font-face {
     font-family: 'CoventryGardenNF';
-    src: url('fonts/CoventryGardenNF.otf') format('otf');
+    src: url('fonts/CoventryGardenNF.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
-
-
-
 
 /* Responsive Images */
 img {
@@ -14,10 +11,11 @@ img {
     height: auto;
 }
 
-
 html {
     height: 100%; /* This makes the html element cover at least the full height of the viewport */
 }
+
+/* MAIN ELEMENTS */
 
 body {
     display: grid;
@@ -53,7 +51,6 @@ header {
 }
 
 main {
-    min-height: 100vh; /* This will ensure that 'main' covers the full viewport height */
     padding: 20px;
     grid-area: content;
     
@@ -62,7 +59,6 @@ main {
 
 footer {
     grid-area: footer;
-    margin-top: 30vh;
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
     text-align: center;
@@ -74,6 +70,7 @@ footer {
     border-radius: 10px 10px 0px 0px;
     position: relative;
     bottom: 0; /* Stick the footer to the bottom */
+    margin-top: 40px;
 }
 
 footer a{
@@ -82,29 +79,12 @@ footer a{
 
 }
 
-p {
-    margin: 5px 0;
-    
-}
-
-header p{
-    /* add shadow */
-    text-shadow: 2px 2px 2px #000000;
-}
-
+/* HEADER */
 
 .logo {
     font-family: 'CoventryGardenNF';
-    /* Increase the size of the logo relative to the viewport width */
-    font-size: 6vw; /* Adjust as needed, 5vw is just an example */
-
-    /* Space below the logo, relative to the viewport height */
-    margin-top: 8vh; /* Adjust as needed */
-    margin-bottom: 3vh; /* Adjust as needed */;
-    
-    /* add shadow */
-    text-shadow: 2px 2px 2px #000000;
-    
+    font-size: 70px;
+    margin: 20px 0px 10px 0px;
 }
 
 .logo a {
@@ -113,12 +93,12 @@ header p{
 }
 .logo a:hover {
     color: #7a89e4; /* Change the color on hover to purple or your desired color */
-    font-size: 60px;
+    font-size: 68px;
 }
 
 
-
 .menu-options {
+    font-size: 20px;
     /* Use flexbox for centering */
     display: flex;
     justify-content: center; /* Center horizontally */
@@ -132,52 +112,34 @@ header p{
     padding: 0;
     margin: 0;
     display: flex; /* Keeps the list horizontal */
+    justify-content: space-between;
 }
 
 .menu-options ul li {
-    /* Styles for individual menu items */
-    margin-right: 30px; /* Space between menu items */
-    /* Last item should not have a right margin */
-    margin-left: 30px; /* Space between menu items */
+    margin: 0 30px; 
 }
 
 .menu-options ul li:first-child {
-    margin-left: 0; /* First item should not have a left margin */
+    margin-left: 30px;
 }
 
 .menu-options ul li:last-child {
-    margin-right: 0; /* Last item should not have a right margin */
+    margin-right: 30px;
 }
 
 .menu-options ul li a {
-    /* Existing styles for the links */
     text-decoration: none;
-    color: #d0d6ff; /* Your existing color */
-    /* add shadow */
+    color: #d0d6ff;
     text-shadow: 2px 2px 2px #000000;
 }
 
 .menu-options ul li a:hover {
-    /* Scale up the size of the menu item on hover */
-    font-size: 1.1em;
-
-    /* Change the color on hover to purple or your desired color */
     color: #7a89e4;
-
-    /* Add a smooth transition effect */
-    transition: color 0.2s, transform 0.2s;
-
-    /* Use transform to scale the text without affecting layout */
-    transform: scale(1.1);
+    transition:  transform 0.2s;
+    transform: scale(1.5);
 }
 
-
-
-
-
-.vertical-spacing {
-    margin-bottom: 40px;
-}
+/* BOTTOM */
 
 .contact-info {
     text-align: center;
@@ -190,14 +152,89 @@ header p{
     margin: 0 10px;
 }
 
-/* CATEGORIES */
+
+/* INDEX PAGE*/
+
+.slogan-container {
+    position: relative; /* Parent container must be relative */
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.slogan {
+    position: absolute; /* Position slogan absolutely to overlay on the image */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust the positioning to the center */
+    font-weight: bold;
+    font-size: 1.8vw;
+    color: #d0d6ff;
+    text-align: center;
+}
+
+.background {
+    width: 50%; /* Ensure the image covers the container */
+    height: auto;
+    /* align to the center */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
 
 
+#index-category {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center; 
+
+    list-style-type: none;
+    background-color: #d0d6ff;
+    border-radius:3%;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    min-width: 300px;
+    margin-bottom: 3vh;
+}
+
+.index-icon {
+    max-width: 200px;
+    height: auto;
+    margin-top: 20px;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center vertically */
+
+    list-style-type: none;
+    background-color: #7a89e4;
+    border-radius:3%;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    
+    width: auto;
+    padding: 20px;
+    margin: 0 auto; /* Center horizontally */
+    text-align: center;
+}
+
+.button a{
+    text-decoration: none;
+    color: white;
+}
+
+/* CATEGORIES PAGE */
 
 #categories {
     display: grid;
-    grid-template-columns: repeat(3, minmax(100px, 1fr)); /* Three columns by default */
-    gap: 20px; /* Adjust the gap size as needed */
+    grid-template-columns: repeat(3, minmax(100px, 1fr)); /* Three columns  */
+    gap: 20px; 
 }
 
 
@@ -210,7 +247,7 @@ header p{
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
     text-align: center;
     min-width: 300px;
-    margin-bottom: 3vh; /* Adjust this value as needed */
+    margin-bottom: 3vh;
 }
 
 
@@ -219,8 +256,6 @@ header p{
     text-align: center;
     
 }
-
-
 /* Style for the icon */
 .icon {
     max-width: 130px;
@@ -280,15 +315,15 @@ header p{
     align-items: center; /* Align items vertically at the center */
     text-decoration: none; /* Remove underline from links */
     color: inherit; /* Inherit the text color from the parent */
-    transition: transform 0.2s; /* Add a smooth transition effect */
 }
 
 /* Hover effect for the subcategory links */
 .sub-category a:hover {
+    transition: transform 0.2s; /* Add a smooth transition effect */
     transform: scale(1.2); /* Enlarge the link on hover */
 }
 
-/* PRODUCTS */
+/* PRODUCTS PAGE*/
 
 .directory a{
     text-decoration: none;
@@ -300,17 +335,16 @@ header p{
 
 .product {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Three columns by default */
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto auto auto; /* Three rows with automatic height */
     gap: 40px; /* Gap between grid items */
 }
 
 #product{
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Three columns by default */
-   
-
+    grid-template-columns: repeat(2, 1fr);
 }
+
 .photos {
     width: 100%; /* Set the width of the grid item to 100% */
     grid-area: 1 / 1 / 3 / 2;
@@ -336,6 +370,7 @@ header p{
     align-items: flex-start;
     
     gap: 1em;
+    margin-top: 20px;
 }
 
 .small {
@@ -343,6 +378,9 @@ header p{
     height: auto;
 }
 
+.poster{
+    height: 70%;
+}
 
 .product-details {
     grid-area: 1 / 2 / 3 / 3;
@@ -379,7 +417,7 @@ header p{
 }
 
 
-/* ABOUT US */
+/* ABOUT US PAGE*/
 
 .person-info-container {
     display: flex; /* Use flexbox to lay out child elements inline */
@@ -395,7 +433,7 @@ header p{
 }
 
 .profile-photo {
-    max-width: 150px; /* Adjust as necessary */
+    max-width: 150px;
     border-radius: 50%;
     margin-right: 20px;
 }
@@ -412,8 +450,11 @@ header p{
 }
 
 
-/*registration */
+/* FORMS */
 
+.form-title{
+    text-align: center;
+}
 
 .form-container {
     max-width: 50%; /* Or the width you prefer */
@@ -448,7 +489,7 @@ input[type="submit"]:hover {
 }
 
 form {
-    max-width: 100%; /* Adjust as needed */
+    max-width: 100%; 
     margin: auto;
 }
 
@@ -471,7 +512,6 @@ label {
     margin-top: 20px; /* Adds space between the label and any elements above */
 }
 
-/* Adjust the button styling as desired */
 button[type="submit"] {
     width: auto;
     padding: 10px 20px;
@@ -520,7 +560,7 @@ summary {
     
     .product {
         grid-template-columns: 1fr; /* Single column layout */
-        grid-template-rows: auto auto auto; /* Adjust as needed */
+        grid-template-rows: auto auto auto;
     }
 
     .photos {
@@ -535,172 +575,3 @@ summary {
         grid-area: 3 / 1 / 4 / 2; /* Position in the third row */
     }
 }
-
-
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
-
-.section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.section h2{
-    margin-bottom: 5vw;
-    /* underline */
-    text-decoration: underline;
-}
-
-.content {
-    display: flex;
-    align-items: center;
-    justify-content: space-around; /* Adjusted for reduced space */
-    width: 100%;
-}
-
-.artwork, .quote-container {
-    width: 35%; /* Adjust width if necessary */
-    margin: 0px; /* Reduced margin */
-}
-
-/* Alternate positioning of artwork and quote */
-.content:nth-of-type(odd) .artwork {
-    order: 1;
-}
-
-.content:nth-of-type(odd) .quote-container {
-    order: 2;
-}
-
-.content:nth-of-type(even) .artwork {
-    order: 2;
-}
-
-.content:nth-of-type(even) .quote-container {
-    order: 1;
-}
-
-.quote-container {
- 
-  
-    background-image: url('assets/cloud.jpg');
-    background-size: 100% 100%;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: fit-content;
-    height: fit-content;
-    border-radius: 100px; /* Adjust or remove as needed */
-    position: relative;
-    clip-path: ellipse(50% 50% at 50% 50%);
-  
-    
-    /* This creates an ellipse that is 100% the width and height of the element, centered */
-    
-    padding: 3em;
-    text-align: center;
-    max-width: 230px;
-    max-height: 500px;
-
-    margin-top: 20vh;
-    margin-bottom: 20vh;
-}
-
-
-
-.quote {
-    font-family: 'Conderon';
-    src: url('fonts/conderon.otf') format('otf');
-
-    font-weight: bold; /* Ensures the text is bold */
-    font-style: normal;
-    /* add shadow */
-    text-shadow: 1px 1px 1px #3d4472;
-
-    display: grid;
-    font-size: 3.0vw; /* Increased font size to make the text appear bolder */
-    margin-top: 7vh; /* Adjust as needed */
-    margin-bottom: 3vh; /* Adjust as needed */
-
-    /* align the quote to the center of the container */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #3d4472; 
-}
-
-
-
-
-.slogan-container {
-    position: relative; /* Parent container must be relative */
-}
-
-.background {
-    width: 80%; /* Ensure the image covers the container */
-    height: auto;
-    /* align to the center */
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-
-}
-
-.slogan {
-    position: absolute; /* Position slogan absolutely to overlay on the image */
-    top: 30%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust the positioning to the center */
-
-    /* Rest of your styles */
-    font-family: 'Conderon';
-    src: url('fonts/conderon.otf') format('otf');
-    font-weight: bold;
-    font-size: 2.5vw;
-    color: #d0d6ff;
-    text-align: center;
-    -webkit-text-stroke-width: 0.5px;
-    -webkit-text-stroke-color: #3d4472;
-    /* add shadow */
-    text-shadow: 2px 2px 2px #3d4472;
-}
-
-
-.paragraph{
-    font-family: 'Conderon';
-    src: url('fonts/conderon.otf') format('otf');
-
-    font-weight: bold; /* Ensures the text is bold */
-    font-style: normal;
-
-    display: grid;
-    gap: 10px;
-    font-size: 4vw; /* Increased font size to make the text appear bolder */
-    margin-top: 12vh; /* Adjust as needed */
-    margin-bottom: 3vh; /* Adjust as needed */
-    /*add shadow */
-    text-shadow: 2px 2px 2px #3d4472;
-    text-align: center;
-  
-    color: #3d4472; 
-}
-
-
-.artwork {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    /* Add any specific styles you want for the image here */
-    max-width: 30%;
-    height: auto;
-}
-
-
-
